@@ -82,12 +82,12 @@ class LoginScreen extends StatelessWidget {
       email: email,
       password: password,
     )
-        .then((value) => Navigator.pushReplacementNamed(context, Routes.home.name))
+        .then((value) => Navigator.pushReplacementNamed(context, Routes.facts.name))
         .onError(
           (error, stackTrace) => authInstance
           .createUserWithEmailAndPassword(email: email, password: password)
           .then(
-              (value) => Navigator.pushReplacementNamed(context, Routes.home.name))
+              (value) => Navigator.pushReplacementNamed(context, Routes.facts.name))
           .onError(
             (error, stackTrace) =>
             ScaffoldMessenger.of(context).showSnackBar(

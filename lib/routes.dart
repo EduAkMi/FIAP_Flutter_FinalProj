@@ -1,10 +1,10 @@
-enum Routes { login, home }
+enum Routes { login, facts }
 
 extension RouteName on Routes {
   String get name {
     switch (this) {
-      case Routes.home:
-        return 'homeScreen';
+      case Routes.facts:
+        return 'factsScreen';
       case Routes.login:
         return 'loginScreen';
     }
