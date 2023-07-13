@@ -1,6 +1,7 @@
-import 'package:final_project/modules/facts/models/factmodel.dart';
 import 'package:flutter/material.dart';
 
+import '/modules/facts/models/factmodel.dart';
+import '/modules/facts/views/components/facts_info_texts.dart';
 import 'components/facts_list_cell.dart';
 
 class FactsScreen extends StatelessWidget {
@@ -24,6 +25,7 @@ class FactsScreen extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
+              const FactsInfoTexts(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(

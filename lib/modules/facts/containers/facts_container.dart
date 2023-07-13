@@ -1,8 +1,8 @@
-import 'package:final_project/modules/facts/bloc/facts_cubit.dart';
-import 'package:final_project/modules/facts/bloc/facts_cubit_state.dart';
-import 'package:final_project/modules/facts/views/facts_loading_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '/modules/facts/bloc/facts_cubit.dart';
+import '/modules/facts/bloc/facts_cubit_state.dart';
+import '/modules/facts/views/facts_loading_screen.dart';
 import '../views/facts_error_screen.dart';
 import '../views/facts_screen.dart';
 

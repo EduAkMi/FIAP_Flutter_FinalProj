@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:final_project/modules/facts/models/factmodel.dart';
+import '/modules/facts/models/factmodel.dart';
 
 enum FactsCubitStateStatus { loading, loaded, error }
 

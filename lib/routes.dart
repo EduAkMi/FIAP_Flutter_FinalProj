@@ -1,4 +1,4 @@
-enum Routes { login, facts }
+enum Routes { splash, login, facts }
 
 extension RouteName on Routes {
   String get name {
@@ -7,6 +7,8 @@ extension RouteName on Routes {
         return 'factsScreen';
       case Routes.login:
         return 'loginScreen';
+      case Routes.splash:
+        return 'splashScreen';
     }
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/facts_info_texts.dart';
+
 class FactsLoadingScreen extends StatelessWidget {
   final VoidCallback onBothPressed;
   final VoidCallback onCatsPressed;
@@ -19,6 +21,7 @@ class FactsLoadingScreen extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
+              const FactsInfoTexts(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(

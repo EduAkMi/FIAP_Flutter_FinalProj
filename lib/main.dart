@@ -1,9 +1,11 @@
-import 'package:final_project/modules/facts/bloc/facts_cubit.dart';
-import 'package:final_project/modules/facts/containers/facts_container.dart';
-import 'package:final_project/modules/login/login_screen.dart';
-import 'package:final_project/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+
+import 'modules/facts/bloc/facts_cubit.dart';
+import 'modules/facts/containers/facts_container.dart';
+import 'modules/login/login_screen.dart';
+import 'modules/splash/splash_screen.dart';
+import 'routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,10 +22,11 @@ class MyApp extends StatelessWidget {
       title: 'FlutterFinalProject',
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), useMaterial3: true),
-      initialRoute: Routes.facts.name,
+      initialRoute: Routes.splash.name,
       routes: {
         Routes.facts.name: (_) => FactsCubitProvider(child: FactsContainer()),
-        Routes.login.name: (_) => LoginScreen()
+        Routes.login.name: (_) => LoginScreen(),
+        Routes.splash.name: (_) => const SplashScreen()
       },
     );
   }

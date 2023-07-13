@@ -1,5 +1,6 @@
-import 'package:final_project/modules/facts/models/factmodel.dart';
 import 'package:flutter/material.dart';
+
+import '/modules/facts/models/factmodel.dart';
 
 class FactsListCell extends StatelessWidget {
   const FactsListCell({
@@ -51,12 +52,6 @@ class FactsListCell extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            // const SizedBox(height: 8),
-            // Text(
-            //   'catFact.overview',
-            //   maxLines: 3,
-            //   overflow: TextOverflow.ellipsis,
-            // ),
           ],
         ),
       ),
