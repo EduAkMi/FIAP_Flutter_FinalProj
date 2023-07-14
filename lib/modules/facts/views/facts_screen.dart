@@ -1,3 +1,4 @@
+import 'package:final_project/modules/facts/views/components/facts_types_buttons.dart';
 import 'package:flutter/material.dart';
 
 import '/modules/facts/models/factmodel.dart';
@@ -26,58 +27,10 @@ class FactsScreen extends StatelessWidget {
           child: Column(
             children: [
               const FactsInfoTexts(),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Material(
-                        borderRadius: BorderRadius.circular(1000),
-                        elevation: 4,
-                        child: ListTile(
-                          selected: true,
-                          selectedColor: Colors.black,
-                          onTap: onBothPressed,
-                          title: const Text(
-                            'Both',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.teal),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Material(
-                        borderRadius: BorderRadius.circular(1000),
-                        elevation: 4,
-                        child: ListTile(
-                          onTap: onCatsPressed,
-                          title: const Text(
-                            'Cats',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.teal),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Material(
-                        borderRadius: BorderRadius.circular(1000),
-                        elevation: 4,
-                        child: ListTile(
-                          onTap: onDogsPressed,
-                          title: const Text(
-                            'Dogs',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.teal),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              FactsTypesButtons(
+                onBothPressed: onBothPressed,
+                onCatsPressed: onCatsPressed,
+                onDogsPressed: onDogsPressed,
               ),
               const SizedBox(height: 16),
               Expanded(
