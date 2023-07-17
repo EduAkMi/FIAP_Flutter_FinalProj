@@ -2,7 +2,7 @@ import 'package:final_project/modules/facts/views/components/facts_types_buttons
 import 'package:flutter/material.dart';
 
 import '/modules/facts/models/factmodel.dart';
-import '/modules/facts/views/components/facts_info_texts.dart';
+import '../../components/facts_info_texts.dart';
 import 'components/facts_list_cell.dart';
 
 class FactsScreen extends StatelessWidget {
@@ -22,11 +22,11 @@ class FactsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.greenAccent,
         body: SafeArea(
           child: Column(
             children: [
-              const FactsInfoTexts(),
+              const FactsInfoTexts(description: 'Select an option to discover more'),
               FactsTypesButtons(
                 onBothPressed: onBothPressed,
                 onCatsPressed: onCatsPressed,
@@ -37,8 +37,8 @@ class FactsScreen extends StatelessWidget {
                 child: ListView.separated(
                   shrinkWrap: true,
                   itemCount: facts.length,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  separatorBuilder: (_, __) => const SizedBox(height: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  separatorBuilder: (_, __) => const SizedBox(height: 10),
                   itemBuilder: (context, index) {
                     final fact = facts[index];
                     return FactsListCell(

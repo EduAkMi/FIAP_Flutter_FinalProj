@@ -4,6 +4,7 @@ class FactsTypesButtons extends StatelessWidget {
   final VoidCallback onBothPressed;
   final VoidCallback onCatsPressed;
   final VoidCallback onDogsPressed;
+  final double radius = 1000;
 
   const FactsTypesButtons({
     super.key,
@@ -19,50 +20,72 @@ class FactsTypesButtons extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Material(
-              borderRadius: BorderRadius.circular(1000),
-              elevation: 4,
-              child: ListTile(
-                selected: true,
-                selectedColor: Colors.black,
-                onTap: onBothPressed,
-                title: const Text(
-                  'Both',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.teal),
+              child: Material(
+                borderRadius: BorderRadius.circular(radius),
+                elevation: 4,
+                child: InkWell(
+                  onTap: onBothPressed,
+                  borderRadius: BorderRadius.circular(radius),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Center(
+                      child: Text(
+                        'Both',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
+              )
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+              child: Material(
+                borderRadius: BorderRadius.circular(radius),
+                elevation: 4,
+                child: InkWell(
+                  onTap: onCatsPressed,
+                  borderRadius: BorderRadius.circular(radius),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Center(
+                      child: Text(
+                        'Cats',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
           ),
           const SizedBox(width: 16),
           Expanded(
             child: Material(
-              borderRadius: BorderRadius.circular(1000),
+              borderRadius: BorderRadius.circular(radius),
               elevation: 4,
-              child: ListTile(
-                onTap: onCatsPressed,
-                title: const Text(
-                  'Cats',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.teal),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Material(
-              borderRadius: BorderRadius.circular(1000),
-              elevation: 4,
-              child: ListTile(
+              child: InkWell(
                 onTap: onDogsPressed,
-                title: const Text(
-                  'Dogs',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.teal),
+                borderRadius: BorderRadius.circular(radius),
+                child: const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Center(
+                    child: Text(
+                      'Dogs',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.teal,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
+            )
           ),
         ],
       ),

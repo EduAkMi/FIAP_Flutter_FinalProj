@@ -10,22 +10,24 @@ class MenuButton extends StatelessWidget {
   final Function() onPressed;
   final String text;
 
+  final double radius = 30;
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      borderRadius: BorderRadius.circular(1000),
-      elevation: 8,
-      color: Colors.white,
+      borderRadius: BorderRadius.circular(radius),
+      elevation: 4,
+      color: Colors.amberAccent,
       child: InkWell(
         onTap: onPressed,
-        borderRadius: BorderRadius.circular(1000),
+        borderRadius: BorderRadius.circular(radius),
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Center(
             child: Text(
               text,
               style: const TextStyle(
-                color: Colors.teal,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),

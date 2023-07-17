@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components/facts_info_texts.dart';
+import '../../components/facts_info_texts.dart';
 import 'components/facts_types_buttons.dart';
 
 class FactsErrorScreen extends StatelessWidget {
@@ -20,11 +20,11 @@ class FactsErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.greenAccent,
         body: SafeArea(
           child: Column(
             children: [
-              const FactsInfoTexts(),
+              const FactsInfoTexts(description: 'Select an option to discover more'),
               FactsTypesButtons(
                 onBothPressed: onBothPressed,
                 onCatsPressed: onCatsPressed,

@@ -1,3 +1,4 @@
+import 'package:final_project/modules/components/facts_info_texts.dart';
 import 'package:flutter/material.dart';
 
 import '../../../routes.dart';
@@ -9,7 +10,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.greenAccent,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -17,6 +18,7 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const FactsInfoTexts(description: ''),
               MenuButton(
                 text: "Sign In",
                 onPressed: () {
@@ -25,7 +27,7 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               MenuButton(
-                text: "Create account",
+                text: "Create Account",
                 onPressed: () {
                   Navigator.pushNamed(context, Routes.signOn.name);
                 },

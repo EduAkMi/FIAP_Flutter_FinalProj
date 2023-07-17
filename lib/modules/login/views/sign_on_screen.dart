@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../routes.dart';
+import '../bloc/sign_on_cubit.dart';
+import '../containers/sign_on_container.dart';
+import 'components/menu_button.dart';
 
 class SignOnScreen extends StatelessWidget {
   SignOnScreen({super.key});
@@ -12,6 +15,23 @@ class SignOnScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.greenAccent,
+      appBar: AppBar(
+        backgroundColor: Colors.greenAccent,
+        title: const Text(
+          'Create Account',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
@@ -20,6 +40,8 @@ class SignOnScreen extends StatelessWidget {
             TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
+                fillColor: Colors.white54,
+                filled: true,
                 labelText: 'Email',
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -43,7 +65,9 @@ class SignOnScreen extends StatelessWidget {
               },
               obscureText: true,
               decoration: InputDecoration(
-                labelText: 'Senha',
+                fillColor: Colors.white54,
+                filled: true,
+                labelText: 'Password',
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Theme.of(context).colorScheme.primary,
@@ -57,42 +81,19 @@ class SignOnScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            ElevatedButton(
-              onPressed: () => _signOnUser(
-                context: context,
-                email: email,
-                password: password,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: MenuButton(
+                text: 'Create Account',
+                onPressed: () {
+                  SignOnContainer.signOn(email, password);
+                },
               ),
-              child: const Text('Create account'),
             ),
+            SignOnProvider(child: SignOnContainer()),
           ],
         ),
       ),
     );
-  }
-
-  Future<void> _signOnUser({
-    required BuildContext context,
-    required String email,
-    required String password,
-  }) async {
-    final authInstance = FirebaseAuth.instance;
-
-    authInstance
-        .createUserWithEmailAndPassword(
-          email: email,
-          password: password,
-        )
-        .then((value) => Navigator.pushReplacementNamed(context, Routes.facts.name))
-        .onError(
-          (error, stackTrace) => ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Colors.red,
-              content: Text(
-                (error as FirebaseException).message ?? 'Erro desconhecido',
-              ),
-            ),
-          ),
-        );
   }
 }

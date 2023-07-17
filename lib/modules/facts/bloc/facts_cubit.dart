@@ -12,6 +12,8 @@ import '../models/dogimageapimodel.dart';
 import '../models/factmodel.dart';
 import 'facts_cubit_state.dart';
 
+enum Options { both, cats, dogs }
+
 class FactsCubit extends Cubit<FactsCubitState> {
   FactsCubit()
       : super(
@@ -208,8 +210,6 @@ class FactsCubit extends Cubit<FactsCubitState> {
     _emitLoaded(facts);
   }
 }
-
-enum Options { both, cats, dogs }
 
 class FactsCubitProvider extends BlocProvider<FactsCubit> {
   FactsCubitProvider({

@@ -29,10 +29,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.blue,
+        color: Colors.greenAccent,
         child: const Center(
           child: SizedBox(
-            child: Text("!Splash Screen!"),
+            child: Text(
+              "!Splash\n\n\n\n\nScreen!",
+              style: TextStyle(
+                color: Colors.red
+              ),
+            ),
           ),
         ));
   }

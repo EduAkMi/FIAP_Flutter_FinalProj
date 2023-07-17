@@ -56,8 +56,10 @@ class FactsListCell extends StatelessWidget {
           children: [
             Text(
               factModel.fact,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
