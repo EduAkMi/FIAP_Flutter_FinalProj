@@ -48,7 +48,7 @@ class FactsListCell extends StatelessWidget {
 
   Expanded getTextExpanded() {
     return Expanded(
-      flex: 3,
+      flex: 4,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
@@ -84,7 +84,7 @@ class FactsListCell extends StatelessWidget {
     int bottomRightRadius,
   ) {
     return Expanded(
-      flex: 1,
+      flex: 3,
       child: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(topLeftRadius.toDouble()),
